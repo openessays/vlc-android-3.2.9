@@ -72,7 +72,7 @@ fi
 # try to detect NDK version
 REL=$(grep -o '^Pkg.Revision.*[0-9]*.*' $ANDROID_NDK/source.properties |cut -d " " -f 3 | cut -d "." -f 1)
 
-if [ "$REL" -eq 18 ]; then
+if [ "$REL" -ge 18 ]; then
     if [ "${HAVE_64}" = 1 ]; then
         ANDROID_API=21
     else

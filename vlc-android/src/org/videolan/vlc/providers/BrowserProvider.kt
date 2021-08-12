@@ -137,7 +137,7 @@ abstract class BrowserProvider(val context: Context, val dataset: LiveDataset<Me
         loading.postValue(false)
     }
 
-    private fun filesFlow(url: String? = this.url, interact : Boolean = true) = channelFlow {
+    private fun filesFlow(url: String? = this.url, interact : Boolean = true) = channelFlow<Media> {
         val listener = object : EventListener {
             override fun onMediaAdded(index: Int, media: Media) {
                 if (!isClosedForSend) offer(media.apply { retain() })

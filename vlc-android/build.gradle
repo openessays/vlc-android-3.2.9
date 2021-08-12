@@ -26,6 +26,7 @@ android {
     flavorDimensions "abi"
 
     lintOptions {
+        checkReleaseBuilds false
         abortOnError false
         disable 'MissingTranslation', 'ExtraTranslation'
     }

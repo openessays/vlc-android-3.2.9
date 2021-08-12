@@ -494,7 +494,8 @@ object UiTools {
     }
 
     fun getLocalesUsedInProject(context: Context): LocalePair {
-        val localesEntryValues = BuildConfig.TRANSLATION_ARRAY
+        val TRANSLATION_ARRAY: Array<String> = arrayOf("nl","el","hu","sq","ta","ja","fr","ml","tt","ro","eu","es","pt","be","sl","th","uk","ne-NP","hr","nb","it","bs","pl","he","lt","sv","br","lv","sk","cs","cy","zh-CN","en","uz","co","ru","tr","pt-BR","zh-TW","mr","sc","ms","da","ko","fo","id","fa","fi","is","en-GB","sr","de","gl","es-MX","km","ca","ga","ar","iw")
+        val localesEntryValues = TRANSLATION_ARRAY
 
 
         val localesEntry = arrayOfNulls<String>(localesEntryValues.size)
