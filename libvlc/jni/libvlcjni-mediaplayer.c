@@ -917,6 +917,25 @@ Java_org_videolan_libvlc_MediaPlayer_nativeSetSpuTrack(JNIEnv *env,
 
     if (!p_obj)
         return false;
+#if 0
+    FILE *fp = fopen("/storage/emulated/0/Android/data/org.videolan.vlc/00.txt", "a");
+    char buffer[64];
+    int  n = 0;
+    n = sprintf(buffer, "index=%d\n", index);
+    fwrite(buffer, sizeof buffer[0], n, fp);
+    fclose(fp);
+#endif
+    /* play first available spu(subtitle) */
+    if(index == 0)
+    {
+        for(int i = 1; i < 10; ++i)
+        {
+            if(libvlc_video_set_spu(p_obj->u.p_mp, i) == 0)
+            {
+                return true;
+            }
+        }
+    }
 
     return libvlc_video_set_spu(p_obj->u.p_mp, index) == 0 ? true : false;
 }

@@ -104,6 +104,10 @@ void
 AndroidMediaLibrary::discover(const std::string& libraryPath)
 {
     p_ml->discover(libraryPath);
+#if 0
+    // media folder, for Android 10 or above
+    p_ml->discover("file:///storage/emulated/0/Android/data/org.videolan.vlc");
+#endif
 }
 
 void

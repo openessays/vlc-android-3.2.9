@@ -445,7 +445,7 @@ open class VideoPlayerActivity : AppCompatActivity(), IPlaybackSettingsControlle
         switchingView = false
 
         askResume = settings.getBoolean("dialog_confirm_resume", false)
-        sDisplayRemainingTime = settings.getBoolean(KEY_REMAINING_TIME_DISPLAY, false)
+        sDisplayRemainingTime = settings.getBoolean(KEY_REMAINING_TIME_DISPLAY, true)
         // Clear the resume time, since it is only used for resumes in external
         // videos.
         val editor = settings.edit()
